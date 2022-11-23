@@ -1,33 +1,33 @@
 /*
-Создать структуру БД турфирмы (можно в экселе, как я показываю на занятиях).
-Что должно содержаться: кто куда летит, когда, какая оплата, может лететь группа, могут быть пересадки на рейсах, 
-какая страна или страны, какие города и отели, звездность отеля, тип питания и комнат, данные о пассажирах, 
-необходимость виз, ограничения, цель поездки, канал привлечения пользователя, бонусы и промокода и т.д.
-Что получится - присылайте)
+РЎРѕР·РґР°С‚СЊ СЃС‚СЂСѓРєС‚СѓСЂСѓ Р‘Р” С‚СѓСЂС„РёСЂРјС‹ (РјРѕР¶РЅРѕ РІ СЌРєСЃРµР»Рµ, РєР°Рє СЏ РїРѕРєР°Р·С‹РІР°СЋ РЅР° Р·Р°РЅСЏС‚РёСЏС…).
+Р§С‚Рѕ РґРѕР»Р¶РЅРѕ СЃРѕРґРµСЂР¶Р°С‚СЊСЃСЏ: РєС‚Рѕ РєСѓРґР° Р»РµС‚РёС‚, РєРѕРіРґР°, РєР°РєР°СЏ РѕРїР»Р°С‚Р°, РјРѕР¶РµС‚ Р»РµС‚РµС‚СЊ РіСЂСѓРїРїР°, РјРѕРіСѓС‚ Р±С‹С‚СЊ РїРµСЂРµСЃР°РґРєРё РЅР° СЂРµР№СЃР°С…, 
+РєР°РєР°СЏ СЃС‚СЂР°РЅР° РёР»Рё СЃС‚СЂР°РЅС‹, РєР°РєРёРµ РіРѕСЂРѕРґР° Рё РѕС‚РµР»Рё, Р·РІРµР·РґРЅРѕСЃС‚СЊ РѕС‚РµР»СЏ, С‚РёРї РїРёС‚Р°РЅРёСЏ Рё РєРѕРјРЅР°С‚, РґР°РЅРЅС‹Рµ Рѕ РїР°СЃСЃР°Р¶РёСЂР°С…, 
+РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚СЊ РІРёР·, РѕРіСЂР°РЅРёС‡РµРЅРёСЏ, С†РµР»СЊ РїРѕРµР·РґРєРё, РєР°РЅР°Р» РїСЂРёРІР»РµС‡РµРЅРёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ, Р±РѕРЅСѓСЃС‹ Рё РїСЂРѕРјРѕРєРѕРґР° Рё С‚.Рґ.
+Р§С‚Рѕ РїРѕР»СѓС‡РёС‚СЃСЏ - РїСЂРёСЃС‹Р»Р°Р№С‚Рµ)
  */
 
--- 1) user_acquisition_channel - канал привлечения
--- 2) clients - клиенты
--- 3) name_of_the_group_of_clients - таблица на случай, если летит группа
--- 4) clients_name_of_the_group_of_clients - связка один-ко-многим пассажир-группа
--- 5) countries - страны
--- 6) airport_name - аэропорты
--- 7) countries_airport_name - связка один-ко-многим страны-аэропорты
--- 8) payment_methods - способы оплаты
--- 9) transfer - если предполагается пересадка
--- 10) cities - города
--- 11) food_types - типы питания
--- 12) number_of_rooms - количество комнат
--- 13) room_types - типы комнат
--- 14) hotel - гостиницы
--- 15) photo_bank - фотобанк
--- 16) list_of_tours - список туров
--- 17) photo_bank_list_of_tours - связка один-ко многим фото к туру
--- 18) bonus_programs - бонусные программы
--- 19) ticket - билет
--- 20) payment_methods_ticket - связка один-ко многим билет и способы его оплаты
--- 21) ticket_status - статус билета (тура)
--- 22) ticket_bonus_programs - связка один-ко-многим билет-бонусная программа
+-- 1) user_acquisition_channel - РєР°РЅР°Р» РїСЂРёРІР»РµС‡РµРЅРёСЏ
+-- 2) clients - РєР»РёРµРЅС‚С‹
+-- 3) name_of_the_group_of_clients - С‚Р°Р±Р»РёС†Р° РЅР° СЃР»СѓС‡Р°Р№, РµСЃР»Рё Р»РµС‚РёС‚ РіСЂСѓРїРїР°
+-- 4) clients_name_of_the_group_of_clients - СЃРІСЏР·РєР° РѕРґРёРЅ-РєРѕ-РјРЅРѕРіРёРј РїР°СЃСЃР°Р¶РёСЂ-РіСЂСѓРїРїР°
+-- 5) countries - СЃС‚СЂР°РЅС‹
+-- 6) airport_name - Р°СЌСЂРѕРїРѕСЂС‚С‹
+-- 7) countries_airport_name - СЃРІСЏР·РєР° РѕРґРёРЅ-РєРѕ-РјРЅРѕРіРёРј СЃС‚СЂР°РЅС‹-Р°СЌСЂРѕРїРѕСЂС‚С‹
+-- 8) payment_methods - СЃРїРѕСЃРѕР±С‹ РѕРїР»Р°С‚С‹
+-- 9) transfer - РµСЃР»Рё РїСЂРµРґРїРѕР»Р°РіР°РµС‚СЃСЏ РїРµСЂРµСЃР°РґРєР°
+-- 10) cities - РіРѕСЂРѕРґР°
+-- 11) food_types - С‚РёРїС‹ РїРёС‚Р°РЅРёСЏ
+-- 12) number_of_rooms - РєРѕР»РёС‡РµСЃС‚РІРѕ РєРѕРјРЅР°С‚
+-- 13) room_types - С‚РёРїС‹ РєРѕРјРЅР°С‚
+-- 14) hotel - РіРѕСЃС‚РёРЅРёС†С‹
+-- 15) photo_bank - С„РѕС‚РѕР±Р°РЅРє
+-- 16) list_of_tours - СЃРїРёСЃРѕРє С‚СѓСЂРѕРІ
+-- 17) photo_bank_list_of_tours - СЃРІСЏР·РєР° РѕРґРёРЅ-РєРѕ РјРЅРѕРіРёРј С„РѕС‚Рѕ Рє С‚СѓСЂСѓ
+-- 18) bonus_programs - Р±РѕРЅСѓСЃРЅС‹Рµ РїСЂРѕРіСЂР°РјРјС‹
+-- 19) ticket - Р±РёР»РµС‚
+-- 20) payment_methods_ticket - СЃРІСЏР·РєР° РѕРґРёРЅ-РєРѕ РјРЅРѕРіРёРј Р±РёР»РµС‚ Рё СЃРїРѕСЃРѕР±С‹ РµРіРѕ РѕРїР»Р°С‚С‹
+-- 21) ticket_status - СЃС‚Р°С‚СѓСЃ Р±РёР»РµС‚Р° (С‚СѓСЂР°)
+-- 22) ticket_bonus_programs - СЃРІСЏР·РєР° РѕРґРёРЅ-РєРѕ-РјРЅРѕРіРёРј Р±РёР»РµС‚-Р±РѕРЅСѓСЃРЅР°СЏ РїСЂРѕРіСЂР°РјРјР°
 
 
 DROP DATABASE IF EXISTS databases_for_analysts;
@@ -37,38 +37,38 @@ USE databases_for_analysts;
 DROP TABLE IF EXISTS user_acquisition_channel;
 CREATE TABLE user_acquisition_channel(
 	id INT,
-	name CHAR COMMENT 'названия каналов',
+	name CHAR COMMENT 'РЅР°Р·РІР°РЅРёСЏ РєР°РЅР°Р»РѕРІ',
 	
 	INDEX(id)
-) COMMENT 'каналы привлечения';
+) COMMENT 'РєР°РЅР°Р»С‹ РїСЂРёРІР»РµС‡РµРЅРёСЏ';
 
 
 DROP TABLE IF EXISTS clients;
 CREATE TABLE clients(
 	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
-	firstname VARCHAR(100) NOT NULL COMMENT 'имя',
-	lastname VARCHAR(100) COMMENT 'фамилия',
-	phone BIGINT UNSIGNED UNIQUE NOT NULL COMMENT 'телефон',
-	email VARCHAR(100) UNIQUE COMMENT 'почта',
-	address TEXT COMMENT 'адрес',
-	comment TEXT DEFAULT NULL COMMENT 'комментарий',
-	created_at DATETIME DEFAULT NOW() COMMENT 'дата регистрации пассажира',
-	updated_at DATETIME ON UPDATE CURRENT_TIMESTAMP COMMENT 'дата изменения данных о пассажире',
-	user_acquisition_channel INT COMMENT 'канал привлечения',
+	firstname VARCHAR(100) NOT NULL COMMENT 'РёРјСЏ',
+	lastname VARCHAR(100) COMMENT 'С„Р°РјРёР»РёСЏ',
+	phone BIGINT UNSIGNED UNIQUE NOT NULL COMMENT 'С‚РµР»РµС„РѕРЅ',
+	email VARCHAR(100) UNIQUE COMMENT 'РїРѕС‡С‚Р°',
+	address TEXT COMMENT 'Р°РґСЂРµСЃ',
+	comment TEXT DEFAULT NULL COMMENT 'РєРѕРјРјРµРЅС‚Р°СЂРёР№',
+	created_at DATETIME DEFAULT NOW() COMMENT 'РґР°С‚Р° СЂРµРіРёСЃС‚СЂР°С†РёРё РїР°СЃСЃР°Р¶РёСЂР°',
+	updated_at DATETIME ON UPDATE CURRENT_TIMESTAMP COMMENT 'РґР°С‚Р° РёР·РјРµРЅРµРЅРёСЏ РґР°РЅРЅС‹С… Рѕ РїР°СЃСЃР°Р¶РёСЂРµ',
+	user_acquisition_channel INT COMMENT 'РєР°РЅР°Р» РїСЂРёРІР»РµС‡РµРЅРёСЏ',
 	
 	CONSTRAINT sh_phone_check CHECK (REGEXP_LIKE(phone, '^[0-9]{11}$')),
-	CONSTRAINT sh_email_check CHECK (REGEXP_LIKE(email, '^((([0-9A-Za-z]{1}[-0-9A-z\.]{0,30}[0-9A-Za-z]?)|([0-9А-Яа-я]{1}[-0-9А-я\.]{0,30}[0-9А-Яа-я]?))@([-A-Za-z]{1,}\.){1,}[-A-Za-z]{2,})$')),
+	CONSTRAINT sh_email_check CHECK (REGEXP_LIKE(email, '^((([0-9A-Za-z]{1}[-0-9A-z\.]{0,30}[0-9A-Za-z]?)|([0-9Рђ-РЇР°-СЏ]{1}[-0-9Рђ-СЏ\.]{0,30}[0-9Рђ-РЇР°-СЏ]?))@([-A-Za-z]{1,}\.){1,}[-A-Za-z]{2,})$')),
 	CONSTRAINT fk_user_acquisition_channel FOREIGN KEY (user_acquisition_channel) REFERENCES user_acquisition_channel(id) ON DELETE CASCADE ON UPDATE CASCADE
-) COMMENT 'клиенты-пассажиры';
+) COMMENT 'РєР»РёРµРЅС‚С‹-РїР°СЃСЃР°Р¶РёСЂС‹';
 
 
 DROP TABLE IF EXISTS name_of_the_group_of_clients;
 CREATE TABLE name_of_the_group_of_clients(
 	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-	name VARCHAR(200) COMMENT 'названия групп',
+	name VARCHAR(200) COMMENT 'РЅР°Р·РІР°РЅРёСЏ РіСЂСѓРїРї',
 	
 	INDEX (id)
-) COMMENT 'если летит группа';
+) COMMENT 'РµСЃР»Рё Р»РµС‚РёС‚ РіСЂСѓРїРїР°';
 
 
 DROP TABLE IF EXISTS clients_name_of_the_group_of_clients;
@@ -78,25 +78,25 @@ CREATE TABLE clients_name_of_the_group_of_clients(
 	
 	CONSTRAINT fk_id_group_p_g FOREIGN KEY (id_group) REFERENCES name_of_the_group_of_clients(id),
 	CONSTRAINT fk_id_client_p_g FOREIGN KEY (id_client) REFERENCES clients(id)
-) COMMENT 'связка один-ко-многим пассажир-группа';
+) COMMENT 'СЃРІСЏР·РєР° РѕРґРёРЅ-РєРѕ-РјРЅРѕРіРёРј РїР°СЃСЃР°Р¶РёСЂ-РіСЂСѓРїРїР°';
 
 
 DROP TABLE IF EXISTS countries;
 CREATE TABLE countries(
 	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-	name VARCHAR(200) COMMENT 'название',
+	name VARCHAR(200) COMMENT 'РЅР°Р·РІР°РЅРёРµ',
 	
 	INDEX (id)
-) COMMENT 'страны';
+) COMMENT 'СЃС‚СЂР°РЅС‹';
 
 
 DROP TABLE IF EXISTS airport_name;
 CREATE TABLE airport_name(
 	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-	name VARCHAR(200) COMMENT 'название',
+	name VARCHAR(200) COMMENT 'РЅР°Р·РІР°РЅРёРµ',
 	
 	INDEX (id)
-) COMMENT 'аэропорт';
+) COMMENT 'Р°СЌСЂРѕРїРѕСЂС‚';
 
 
 DROP TABLE IF EXISTS countries_airport_name;
@@ -106,16 +106,16 @@ CREATE TABLE countries_airport_name(
 	
 	CONSTRAINT fk_id_countries FOREIGN KEY (id_countries) REFERENCES countries(id),
 	CONSTRAINT fk_id_airport_name FOREIGN KEY (id_airport_name) REFERENCES airport_name(id)
-) COMMENT 'один-ко-многим страна-аэропорт';
+) COMMENT 'РѕРґРёРЅ-РєРѕ-РјРЅРѕРіРёРј СЃС‚СЂР°РЅР°-Р°СЌСЂРѕРїРѕСЂС‚';
 
 
 DROP TABLE IF EXISTS payment_methods;
 CREATE TABLE payment_methods(
 	id INT,
-	name VARCHAR(100) COMMENT 'названия способов',
+	name VARCHAR(100) COMMENT 'РЅР°Р·РІР°РЅРёСЏ СЃРїРѕСЃРѕР±РѕРІ',
 	
 	INDEX(id)
-) COMMENT 'способы оплаты';
+) COMMENT 'СЃРїРѕСЃРѕР±С‹ РѕРїР»Р°С‚С‹';
 
 
 DROP TABLE IF EXISTS transfer;
@@ -127,84 +127,84 @@ CREATE TABLE transfer(
 	INDEX (id),
 	CONSTRAINT fk_transfer_in_the_country FOREIGN KEY (transfer_in_the_country) REFERENCES countries(id),
 	CONSTRAINT fk_transfer_in_the_airport FOREIGN KEY (transfer_in_the_airport) REFERENCES airport_name(id)
-) COMMENT 'если предполагается пересадка';
+) COMMENT 'РµСЃР»Рё РїСЂРµРґРїРѕР»Р°РіР°РµС‚СЃСЏ РїРµСЂРµСЃР°РґРєР°';
 
 
 DROP TABLE IF EXISTS cities;
 CREATE TABLE cities(
 	id_city INT,
-	name VARCHAR(200) COMMENT 'название',
+	name VARCHAR(200) COMMENT 'РЅР°Р·РІР°РЅРёРµ',
 	
 	INDEX (id_city)
-) COMMENT 'названия городов';
+) COMMENT 'РЅР°Р·РІР°РЅРёСЏ РіРѕСЂРѕРґРѕРІ';
 
 
 DROP TABLE IF EXISTS food_types;
 CREATE TABLE food_types(
 	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-	name VARCHAR(100) COMMENT 'название',
-	description TEXT COMMENT 'описание',
+	name VARCHAR(100) COMMENT 'РЅР°Р·РІР°РЅРёРµ',
+	description TEXT COMMENT 'РѕРїРёСЃР°РЅРёРµ',
 	
 	INDEX (id)
-) COMMENT 'типы питания';
+) COMMENT 'С‚РёРїС‹ РїРёС‚Р°РЅРёСЏ';
 
 
 DROP TABLE IF EXISTS number_of_rooms;
 CREATE TABLE number_of_rooms(
-	number_of_rooms INT COMMENT 'количество',
+	number_of_rooms INT COMMENT 'РєРѕР»РёС‡РµСЃС‚РІРѕ',
 	
 	INDEX (number_of_rooms)
-) COMMENT 'количество комнат';
+) COMMENT 'РєРѕР»РёС‡РµСЃС‚РІРѕ РєРѕРјРЅР°С‚';
 
 
 DROP TABLE IF EXISTS room_types;
 CREATE TABLE room_types(
 	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-	title VARCHAR(100) COMMENT 'краткое название',
-	number_of_rooms INT COMMENT 'кол-во комнат',
-	description TEXT COMMENT 'описание',
+	title VARCHAR(100) COMMENT 'РєСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ',
+	number_of_rooms INT COMMENT 'РєРѕР»-РІРѕ РєРѕРјРЅР°С‚',
+	description TEXT COMMENT 'РѕРїРёСЃР°РЅРёРµ',
 	
 	INDEX(id),
 	CONSTRAINT fk_number_of_rooms FOREIGN KEY (number_of_rooms) REFERENCES number_of_rooms(number_of_rooms) ON DELETE CASCADE ON UPDATE CASCADE
-) COMMENT 'типы комнат';
+) COMMENT 'С‚РёРїС‹ РєРѕРјРЅР°С‚';
 
 
 DROP TABLE IF EXISTS hotel;
 CREATE TABLE hotel(
 	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	name VARCHAR(300) COMMENT 'название',
-	city INT COMMENT 'город',
-	address TEXT COMMENT 'адрес',
-	hotel_category ENUM ('not category', '*', '**', '***', '****', '*****') COMMENT 'кол-во звёзд',
-	food_type INT UNSIGNED NOT NULL COMMENT 'тип еды',
-	room_types INT UNSIGNED NOT NULL COMMENT 'тип комнат',
-	description TEXT DEFAULT NULL COMMENT 'описание',
+	name VARCHAR(300) COMMENT 'РЅР°Р·РІР°РЅРёРµ',
+	city INT COMMENT 'РіРѕСЂРѕРґ',
+	address TEXT COMMENT 'Р°РґСЂРµСЃ',
+	hotel_category ENUM ('not category', '*', '**', '***', '****', '*****') COMMENT 'РєРѕР»-РІРѕ Р·РІС‘Р·Рґ',
+	food_type INT UNSIGNED NOT NULL COMMENT 'С‚РёРї РµРґС‹',
+	room_types INT UNSIGNED NOT NULL COMMENT 'С‚РёРї РєРѕРјРЅР°С‚',
+	description TEXT DEFAULT NULL COMMENT 'РѕРїРёСЃР°РЅРёРµ',
 	
 	CONSTRAINT fk_city FOREIGN KEY (city) REFERENCES cities(id_city) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_food_type FOREIGN KEY (food_type) REFERENCES food_types(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_room_types FOREIGN KEY (room_types) REFERENCES room_types(id) ON DELETE CASCADE ON UPDATE CASCADE
-) COMMENT 'гостиница';
+) COMMENT 'РіРѕСЃС‚РёРЅРёС†Р°';
 
 
 DROP TABLE IF EXISTS photo_bank;
 CREATE TABLE photo_bank(
 	id BIGINT,
-	photo_link VARCHAR(200) COMMENT 'ссылка на фото',
+	photo_link VARCHAR(200) COMMENT 'СЃСЃС‹Р»РєР° РЅР° С„РѕС‚Рѕ',
 	
 	INDEX (id)
-) COMMENT 'фотобанк';
+) COMMENT 'С„РѕС‚РѕР±Р°РЅРє';
 
 
 DROP TABLE IF EXISTS list_of_tours;
 CREATE TABLE list_of_tours(
 	id INT,
-	title VARCHAR(350) COMMENT 'название туров',
-	description TEXT COMMENT 'описание',
-	special_notes TEXT COMMENT 'особые отметки',
-	a_photo BIGINT DEFAULT NULL COMMENT 'фото',
+	title VARCHAR(350) COMMENT 'РЅР°Р·РІР°РЅРёРµ С‚СѓСЂРѕРІ',
+	description TEXT COMMENT 'РѕРїРёСЃР°РЅРёРµ',
+	special_notes TEXT COMMENT 'РѕСЃРѕР±С‹Рµ РѕС‚РјРµС‚РєРё',
+	a_photo BIGINT DEFAULT NULL COMMENT 'С„РѕС‚Рѕ',
 	
 	INDEX (id)
-) COMMENT 'список туров';
+) COMMENT 'СЃРїРёСЃРѕРє С‚СѓСЂРѕРІ';
 
 
 DROP TABLE IF EXISTS photo_bank_list_of_tours;
@@ -214,43 +214,43 @@ CREATE TABLE photo_bank_list_of_tours(
 	
 	CONSTRAINT fk_id_photo_bank FOREIGN KEY (id_photo_bank) REFERENCES photo_bank(id),
 	CONSTRAINT fk_id_tour FOREIGN KEY (id_tour) REFERENCES list_of_tours(id)
-) COMMENT 'один-ко-многим фото к турам';
+) COMMENT 'РѕРґРёРЅ-РєРѕ-РјРЅРѕРіРёРј С„РѕС‚Рѕ Рє С‚СѓСЂР°Рј';
 
 
 DROP TABLE IF EXISTS bonus_programs;
 CREATE TABLE bonus_programs(
 	id BIGINT,
-	title VARCHAR(250) COMMENT 'имя программы',
-	description TEXT DEFAULT NULL COMMENT 'описание',
+	title VARCHAR(250) COMMENT 'РёРјСЏ РїСЂРѕРіСЂР°РјРјС‹',
+	description TEXT DEFAULT NULL COMMENT 'РѕРїРёСЃР°РЅРёРµ',
 	
 	INDEX (id)
-) COMMENT 'список бонусных программ';
+) COMMENT 'СЃРїРёСЃРѕРє Р±РѕРЅСѓСЃРЅС‹С… РїСЂРѕРіСЂР°РјРј';
 
 
 DROP TABLE IF EXISTS ticket;
 CREATE TABLE ticket(
 	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	name_travel INT COMMENT 'название тура',
-	ticket_issue_date DATETIME DEFAULT NOW() COMMENT 'время оформления билета',
-	date_and_time_of_flight DATETIME NOT NULL COMMENT 'дата и время полёта',
-	client_id BIGINT UNSIGNED NOT NULL COMMENT 'клиент',
-	id_countries BIGINT UNSIGNED NOT NULL COMMENT 'в страну',
-	id_airport_name BIGINT UNSIGNED NOT NULL COMMENT 'в аэропорт',
-	is_there_a_transplant BIGINT UNSIGNED DEFAULT NULL COMMENT 'есть ли пересадка',
-	need_for_a_visa ENUM('yes', 'no') COMMENT 'нужна ли виза',
-	restrictions TEXT DEFAULT NULL COMMENT 'ограничения',
-	purpose_of_travel TEXT DEFAULT NULL COMMENT 'цель поездки',
-	hotel BIGINT UNSIGNED NOT NULL COMMENT 'гостиница',
-	price DECIMAL(10, 2) NOT NULL COMMENT 'цена',
-	bonus_program BIGINT DEFAULT NULL COMMENT 'бонусная программа',
-	payment_methods BIGINT UNSIGNED NOT NULL COMMENT 'способ оплаты',
+	name_travel INT COMMENT 'РЅР°Р·РІР°РЅРёРµ С‚СѓСЂР°',
+	ticket_issue_date DATETIME DEFAULT NOW() COMMENT 'РІСЂРµРјСЏ РѕС„РѕСЂРјР»РµРЅРёСЏ Р±РёР»РµС‚Р°',
+	date_and_time_of_flight DATETIME NOT NULL COMMENT 'РґР°С‚Р° Рё РІСЂРµРјСЏ РїРѕР»С‘С‚Р°',
+	client_id BIGINT UNSIGNED NOT NULL COMMENT 'РєР»РёРµРЅС‚',
+	id_countries BIGINT UNSIGNED NOT NULL COMMENT 'РІ СЃС‚СЂР°РЅСѓ',
+	id_airport_name BIGINT UNSIGNED NOT NULL COMMENT 'РІ Р°СЌСЂРѕРїРѕСЂС‚',
+	is_there_a_transplant BIGINT UNSIGNED DEFAULT NULL COMMENT 'РµСЃС‚СЊ Р»Рё РїРµСЂРµСЃР°РґРєР°',
+	need_for_a_visa ENUM('yes', 'no') COMMENT 'РЅСѓР¶РЅР° Р»Рё РІРёР·Р°',
+	restrictions TEXT DEFAULT NULL COMMENT 'РѕРіСЂР°РЅРёС‡РµРЅРёСЏ',
+	purpose_of_travel TEXT DEFAULT NULL COMMENT 'С†РµР»СЊ РїРѕРµР·РґРєРё',
+	hotel BIGINT UNSIGNED NOT NULL COMMENT 'РіРѕСЃС‚РёРЅРёС†Р°',
+	price DECIMAL(10, 2) NOT NULL COMMENT 'С†РµРЅР°',
+	bonus_program BIGINT DEFAULT NULL COMMENT 'Р±РѕРЅСѓСЃРЅР°СЏ РїСЂРѕРіСЂР°РјРјР°',
+	payment_methods BIGINT UNSIGNED NOT NULL COMMENT 'СЃРїРѕСЃРѕР± РѕРїР»Р°С‚С‹',
 	
 	CONSTRAINT fk_client_id FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_id_countries_ticket FOREIGN KEY (id_countries) REFERENCES countries(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_id_airport_name_ticket FOREIGN KEY (id_airport_name) REFERENCES airport_name(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_hotel FOREIGN KEY (hotel) REFERENCES hotel(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_name_travel FOREIGN KEY (name_travel) REFERENCES list_of_tours(id) ON DELETE CASCADE ON UPDATE CASCADE
-) COMMENT 'билет';
+) COMMENT 'Р±РёР»РµС‚';
 
 
 DROP TABLE IF EXISTS payment_methods_ticket;
@@ -260,16 +260,16 @@ CREATE TABLE  payment_methods_ticket(
 	
 	CONSTRAINT fk_pt_id_payment_methods FOREIGN KEY (id_payment_methods) REFERENCES payment_methods(id),
 	CONSTRAINT fk_pt_id_ticket FOREIGN KEY (id_ticket) REFERENCES ticket(id)
-) COMMENT 'привязка один-ко-многим тур-оплата';
+) COMMENT 'РїСЂРёРІСЏР·РєР° РѕРґРёРЅ-РєРѕ-РјРЅРѕРіРёРј С‚СѓСЂ-РѕРїР»Р°С‚Р°';
 
 
 DROP TABLE IF EXISTS ticket_status;
 CREATE TABLE ticket_status(
 	id_ticket BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-	status ENUM('новый', 'в работе', 'завершён', 'отменён') COMMENT  'статус',
+	status ENUM('РЅРѕРІС‹Р№', 'РІ СЂР°Р±РѕС‚Рµ', 'Р·Р°РІРµСЂС€С‘РЅ', 'РѕС‚РјРµРЅС‘РЅ') COMMENT  'СЃС‚Р°С‚СѓСЃ',
 	
 	CONSTRAINT fk_ts_id_ticket FOREIGN KEY (id_ticket) REFERENCES ticket(id)
-) COMMENT 'статус билета (тура)';
+) COMMENT 'СЃС‚Р°С‚СѓСЃ Р±РёР»РµС‚Р° (С‚СѓСЂР°)';
 
 
 DROP TABLE IF EXISTS ticket_bonus_programs;
@@ -279,6 +279,4 @@ CREATE TABLE ticket_bonus_programs(
 
 	CONSTRAINT fk_id_bonus_program FOREIGN KEY (id_bonus_program) REFERENCES bonus_programs(id),
 	CONSTRAINT fk_id_ticket FOREIGN KEY (id_ticket) REFERENCES ticket(id)
-) COMMENT 'привязка один-ко-многим';
-
-
+) COMMENT 'РїСЂРёРІСЏР·РєР° РѕРґРёРЅ-РєРѕ-РјРЅРѕРіРёРј';
